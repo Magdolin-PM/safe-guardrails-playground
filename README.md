@@ -1,69 +1,71 @@
-# Welcome to your Lovable project
+# 🛡️ Guardrails for Non-Technical Vibe-Coders
 
-## Project info
+A simple, user-friendly approach to implementing security guardrails for AI-assisted development projects.
 
-**URL**: https://lovable.dev/projects/39e35f6f-472c-4736-8edb-801defdf3a2a
+**[Try the Live Demo →](https://safe-guardrails-playground-60.lovable.app/)**
 
-## How can I edit this code?
+**[Read the Full Blog Post →](https://lightning-cook-241.notion.site/Guardrails-for-Vibe-Coders-Balancing-Innovation-and-Data-Privacy-in-the-AI-Era-1c0dfa5cd1e080328b25c14ee799ac92)**
 
-There are several ways of editing your application.
+## 📱 What is This?
 
-**Use Lovable**
+After seeing developers like Leo struggle with security issues in their AI-built SaaS projects, I created this educational tool to help non-technical "vibe coders" implement basic security guardrails before going public with their projects.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/39e35f6f-472c-4736-8edb-801defdf3a2a) and start prompting.
+> "AI is no longer just an assistant, it's also the builder. Now, you can continue to whine about it or start building." - Leo
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+- **Simple, Choice-Based Interface**: No technical expertise required
+- **Project-Specific Recommendations**: Tailored guidance based on your specific use case
+- **Interactive Learning**: See real examples of vulnerable vs. secure code
+- **Actionable Security Checklists**: Practical steps anyone can implement
+- **No Integration Required**: Pure educational guidance that works without any backend connection
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🔐 Security Guardrails Covered
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Authentication Security**
+   - Password hashing and secure storage
+   - Authentication flow best practices
+   - Session management recommendations
 
-Follow these steps:
+2. **API Security**
+   - Rate limiting to prevent abuse
+   - API key validation and management
+   - Proper error handling
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Database Security**
+   - SQL injection prevention
+   - Parameterized queries
+   - Database access pattern validation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Input Validation & Sanitization**
+   - Cross-site scripting (XSS) prevention
+   - Input sanitization techniques
+   - Form validation best practices
 
-# Step 3: Install the necessary dependencies.
-npm i
+5. **General Security Recommendations**
+   - Project-specific best practices
+   - Data handling requirements (PII, payment info)
+   - Technology-specific security tips
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🚀 How to Use
 
-**Edit a file directly in GitHub**
+1. Select your project type (website, SaaS, API, etc.)
+2. Choose the technologies you're using
+3. Indicate what kinds of data you'll be handling
+4. Explore security recommendations tailored to your choices
+5. View specific code examples showing secure vs. insecure implementations
+6. Use the practical guidance to implement proper guardrails in your project
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 💡 Why It Matters
 
-**Use GitHub Codespaces**
+Vibe coders are using AI to build faster than ever, but security can't be an afterthought. This tool bridges the gap between rapid development and basic security practices, helping you avoid common pitfalls before your project goes public.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+As Leo discovered when his project was compromised: "ever since I started to share how I built my SaaS using Cursor, random thing are happening, maxed out usage on api keys, people bypassing the subscription, creating random shit on db."
 
-## What technologies are used for this project?
+## 🌟 About the Creator
 
-This project is built with .
+This project was created by [Magdolin Harmina](https://www.linkedin.com/in/magdolin-harmina-52139978/), Founder of [QL-Assistai.com](https://QL-Assistai.com) - a consultancy specializing in helping organizations implement AI solutions with proper safeguards.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📊 Disclaimer
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/39e35f6f-472c-4736-8edb-801defdf3a2a) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+This is an educational tool, not a replacement for professional security auditing. Use it to learn about security basics and implement fundamental protections in your projects.
