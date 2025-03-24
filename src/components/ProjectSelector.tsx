@@ -95,8 +95,8 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
         <div className="animate-fade-in">
           <h2 className="text-2xl font-medium mb-6">Select Your Project Type</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-            {projectTypes.filter(p => p.id !== 'ecommerce').map((project) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+            {projectTypes.map((project) => (
               <button
                 key={project.id}
                 onClick={() => handleProjectSelect(project)}
