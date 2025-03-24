@@ -1,4 +1,4 @@
-# 🛡️ Guardrails for Non-Technical Vibe-Coders
+# 🛡️ Guardrails for Non-Technical Vibe-Coders 
 
 A simple, user-friendly approach to implementing security guardrails for AI-assisted development projects.
 
@@ -9,8 +9,6 @@ A simple, user-friendly approach to implementing security guardrails for AI-assi
 ## 📱 What is This?
 
 After seeing developers like Leo struggle with security issues in their AI-built SaaS projects, I created this educational tool to help non-technical "vibe coders" implement basic security guardrails before going public with their projects.
-
-> "AI is no longer just an assistant, it's also the builder. Now, you can continue to whine about it or start building." - Leo
 
 ## ✨ Features
 
