@@ -61,7 +61,7 @@ const GuardrailsExplorer: React.FC<GuardrailsExplorerProps> = ({
   };
   
   return (
-    <div className="w-full max-w-4xl animate-fade-in">
+    <div className="w-full max-w-4xl animate-fade-in px-4 sm:px-6 lg:px-8">
       <div className="mb-8 flex justify-between items-center">
         <div>
           <h2 className="text-2xl font-medium flex items-center">
@@ -122,12 +122,12 @@ const GuardrailsExplorer: React.FC<GuardrailsExplorerProps> = ({
           </Tabs>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {relevantGuardrails.map((guardrail) => (
             <button
               key={guardrail.id}
               onClick={() => setSelectedGuardrail(guardrail)}
-              className="flex flex-col items-center text-left p-6 rounded-lg border border-gray-light hover:border-teal hover:shadow-md transition-all duration-300 bg-white"
+              className="flex flex-col items-center text-left p-6 rounded-lg border border-gray-light hover:border-teal hover:shadow-md transition-all duration-300 bg-white h-full"
             >
               <div className="text-4xl mb-4">{guardrail.icon}</div>
               <h3 className="text-xl font-medium mb-2">{guardrail.title}</h3>

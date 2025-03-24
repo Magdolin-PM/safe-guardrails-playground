@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Progress } from "@/components/ui/progress";
 
 interface StepIndicatorProps {
   currentStep: number;
@@ -12,9 +13,9 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, totalSteps, 
   return (
     <div className="w-full mb-12">
       {/* Step indicators */}
-      <div className="flex items-center justify-between mb-8 max-w-3xl mx-auto">
+      <div className="flex items-center justify-between mb-8 w-full max-w-3xl mx-auto px-4 sm:px-0">
         {steps.map((step, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <div key={index} className="flex flex-col items-center max-w-[120px]">
             <div 
               className={cn(
                 "w-12 h-12 rounded-full flex items-center justify-center mb-2 text-lg font-medium",
@@ -31,15 +32,12 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, totalSteps, 
       </div>
       
       {/* Progress bar */}
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-sm text-gray-dark">Step {currentStep} of {totalSteps}</span>
-        <span className="text-sm text-gray-dark">Project Setup</span>
-      </div>
-      <div className="w-full bg-gray-light rounded-full h-2">
-        <div 
-          className="bg-teal h-2 rounded-full" 
-          style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-        ></div>
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-sm text-gray-dark">Step {currentStep} of {totalSteps}</span>
+          <span className="text-sm text-gray-dark">Project Setup</span>
+        </div>
+        <Progress value={(currentStep / totalSteps) * 100} className="h-2 bg-gray-light" />
       </div>
     </div>
   );

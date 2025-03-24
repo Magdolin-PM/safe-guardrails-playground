@@ -32,7 +32,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <header className="bg-white border-b border-gray-light">
-        <div className="container mx-auto px-4 sm:px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Shield className="w-6 h-6 text-teal mr-2" />
@@ -50,22 +50,24 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 sm:px-6 py-8 flex-grow">
-        {!projectConfig ? (
-          <ProjectSelector onComplete={handleProjectConfigComplete} />
-        ) : (
-          <GuardrailsExplorer 
-            guardrails={guardrails}
-            projectType={projectConfig.projectType}
-            selectedTechnologies={projectConfig.selectedTechnologies}
-            selectedDataTypes={projectConfig.selectedDataTypes}
-            onReset={handleReset}
-          />
-        )}
+      <main className="container mx-auto flex-grow flex justify-center">
+        <div className="w-full max-w-6xl py-8">
+          {!projectConfig ? (
+            <ProjectSelector onComplete={handleProjectConfigComplete} />
+          ) : (
+            <GuardrailsExplorer 
+              guardrails={guardrails}
+              projectType={projectConfig.projectType}
+              selectedTechnologies={projectConfig.selectedTechnologies}
+              selectedDataTypes={projectConfig.selectedDataTypes}
+              onReset={handleReset}
+            />
+          )}
+        </div>
       </main>
 
       <footer className="bg-gray-light py-6 mt-auto">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-gray-dark/80 text-sm">
