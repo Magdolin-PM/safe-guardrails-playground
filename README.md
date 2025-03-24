@@ -66,6 +66,6 @@ As Leo discovered when his project was compromised: "ever since I started to sha
 
 This project was created by [Magdolin Harmina](https://www.linkedin.com/in/magdolin-harmina-52139978/), Founder of [QL-Assistai.com](https://QL-Assistai.com) - a consultancy specializing in helping organizations implement AI solutions with proper safeguards.
 
-## 📊 Disclaimer
+## Disclaimer
 
 This is an educational tool, not a replacement for professional security auditing. Use it to learn about security basics and implement fundamental protections in your projects.
