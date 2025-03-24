@@ -62,7 +62,7 @@ As Leo discovered when his project was compromised: "ever since I started to sha
 
 ## 🌟 About the Creator
 
-This project was created by [Magdolin Harmina](https://www.linkedin.com/in/magdolin-harmina-52139978/), Founder of [QL-Assistai.com](https://QL-Assistai.com) - a consultancy specializing in helping organizations implement AI solutions with proper safeguards.
+This project was created by [Magdolin Harmina](https://www.linkedin.com/in/magdolin-harmina-52139978/), Founder of [QL-Assistai.com](https://QL-Assistai.com) - a Lead Intelligence Assistant helping founders and consultancies with qualifiying, prioritizing and tailoring persoanlized follow-ups that resonates!
 
 ## Disclaimer
 
