@@ -6,12 +6,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { cn } from '@/lib/utils';
 import StepIndicator from './StepIndicator';
-import { Globe, ServerStack, Code, Smartphone } from 'lucide-react';
+import { Globe, Server, Code, Smartphone } from 'lucide-react';
 
 // Map project types to their respective icons
 const projectTypeIcons = {
   website: <Globe className="w-10 h-10 text-teal" />,
-  saas: <ServerStack className="w-10 h-10 text-teal" />,
+  saas: <Server className="w-10 h-10 text-teal" />,
   api: <Code className="w-10 h-10 text-teal" />,
   mobile: <Smartphone className="w-10 h-10 text-teal" />,
   ecommerce: <Globe className="w-10 h-10 text-teal" />
