@@ -4,6 +4,7 @@ import ProjectSelector from '@/components/ProjectSelector';
 import GuardrailsExplorer from '@/components/GuardrailsExplorer';
 import { guardrails } from '@/data/guardrails';
 import { ProjectType, Technology, DataType } from '@/data/projectTypes';
+import { Shield } from 'lucide-react';
 
 const Index = () => {
   const [projectConfig, setProjectConfig] = useState<{
@@ -25,12 +26,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <header className="bg-white border-b border-gray-light">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <div className="text-2xl mr-2">🛡️</div>
+              <Shield className="w-6 h-6 text-teal mr-2" />
               <h1 className="text-2xl font-medium text-gray-dark">Security Guardrails</h1>
             </div>
             <a 
@@ -45,7 +46,7 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-6 py-12">
+      <main className="container mx-auto px-6 py-8 flex-grow">
         {!projectConfig ? (
           <ProjectSelector onComplete={handleProjectConfigComplete} />
         ) : (
@@ -59,10 +60,10 @@ const Index = () => {
         )}
       </main>
 
-      <footer className="bg-gray-light py-6">
+      <footer className="bg-gray-light py-4 mt-auto">
         <div className="container mx-auto px-6 text-center text-gray-dark/70 text-sm">
           <p>Security Guardrails — Educational tool for implementing security best practices</p>
-          <p className="mt-2">This is a static demonstration tool and not a replacement for professional security auditing.</p>
+          <p className="mt-1">This is a static demonstration tool and not a replacement for professional security auditing.</p>
         </div>
       </footer>
     </div>

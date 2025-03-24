@@ -59,11 +59,11 @@
   }
   
   .btn-primary {
-    @apply bg-teal text-white px-6 py-3 rounded-md transition-all hover:bg-teal-dark;
+    @apply bg-teal text-white px-6 py-2 rounded-md transition-all hover:bg-teal-dark focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2;
   }
   
   .btn-secondary {
-    @apply bg-teal-light text-white px-6 py-3 rounded-md transition-all hover:bg-teal;
+    @apply bg-teal-light text-white px-6 py-2 rounded-md transition-all hover:bg-teal focus:outline-none focus:ring-2 focus:ring-teal-light focus:ring-offset-2;
   }
   
   .glass-card {
@@ -98,3 +98,16 @@
     opacity: 1;
   }
 }
+
+/* Improved accessibility focus styles */
+:focus {
+  @apply outline-none ring-2 ring-teal ring-offset-2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+

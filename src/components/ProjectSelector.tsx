@@ -5,6 +5,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { cn } from '@/lib/utils';
+import StepIndicator from './StepIndicator';
+import { Globe, ServerStack, Code, Smartphone } from 'lucide-react';
+
+// Map project types to their respective icons
+const projectTypeIcons = {
+  website: <Globe className="w-10 h-10 text-teal" />,
+  saas: <ServerStack className="w-10 h-10 text-teal" />,
+  api: <Code className="w-10 h-10 text-teal" />,
+  mobile: <Smartphone className="w-10 h-10 text-teal" />,
+  ecommerce: <Globe className="w-10 h-10 text-teal" />
+};
 
 type ProjectSelectorProps = {
   onComplete: (selection: {
@@ -19,6 +30,12 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [selectedData, setSelectedData] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState<number>(1);
+
+  const steps = [
+    { title: "Select your project type", number: 1 },
+    { title: "Configure safety filters", number: 2 },
+    { title: "Get personalized recommendations", number: 3 }
+  ];
 
   const handleProjectSelect = (projectType: ProjectType) => {
     setSelectedProjectType(projectType);
@@ -72,30 +89,31 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
 
   return (
     <div className="w-full max-w-4xl animate-fade-in">
-      <div className="mb-8">
-        <h2 className="text-2xl font-medium mb-2">Configure Your Project</h2>
-        <p className="text-gray-dark/80">
-          Tell us about your project to receive tailored security recommendations.
-        </p>
-      </div>
+      <StepIndicator currentStep={currentStep} totalSteps={3} steps={steps} />
       
       {currentStep === 1 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-          {projectTypes.map((project) => (
-            <button
-              key={project.id}
-              onClick={() => handleProjectSelect(project)}
-              className={cn(
-                "flex flex-col items-center justify-center p-6 rounded-lg border border-gray transition-all duration-300",
-                "hover:border-teal hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal",
-                "bg-white text-left"
-              )}
-            >
-              <div className="text-4xl mb-3">{project.icon}</div>
-              <h3 className="text-xl font-medium">{project.name}</h3>
-              <p className="text-sm text-gray-dark/70 mt-2">{project.description}</p>
-            </button>
-          ))}
+        <div className="animate-fade-in">
+          <h2 className="text-2xl font-medium mb-6">Select Your Project Type</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+            {projectTypes.filter(p => p.id !== 'ecommerce').map((project) => (
+              <button
+                key={project.id}
+                onClick={() => handleProjectSelect(project)}
+                className={cn(
+                  "flex flex-col items-center justify-center p-6 rounded-lg border transition-all duration-300",
+                  "hover:border-teal hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal",
+                  "bg-white text-center h-full"
+                )}
+              >
+                <div className="w-16 h-16 rounded-full bg-teal/10 flex items-center justify-center mb-4">
+                  {projectTypeIcons[project.id as keyof typeof projectTypeIcons]}
+                </div>
+                <h3 className="text-lg font-medium">{project.name}</h3>
+                <p className="text-sm text-gray-dark/70 mt-2">{project.description}</p>
+              </button>
+            ))}
+          </div>
         </div>
       )}
       
@@ -104,7 +122,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
           <div className="mb-6">
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-medium">
-                Configuring {selectedProjectType.name} {selectedProjectType.icon}
+                Configure Safety Filters for {selectedProjectType.name}
               </h3>
               <button 
                 onClick={() => setCurrentStep(1)}
@@ -179,9 +197,9 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
           <div className="mt-8 flex justify-end">
             <button
               onClick={handleComplete}
-              className="btn-primary"
+              className="bg-teal hover:bg-teal-dark text-white px-6 py-2 rounded-md transition-colors duration-200"
             >
-              Continue to Recommendations
+              Continue
             </button>
           </div>
         </div>

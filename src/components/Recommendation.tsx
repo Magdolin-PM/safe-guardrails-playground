@@ -2,6 +2,7 @@
 import React from 'react';
 import { Recommendation as RecommendationType } from '../data/guardrails';
 import { Badge } from "@/components/ui/badge";
+import { cn } from '@/lib/utils';
 
 interface RecommendationProps {
   recommendation: RecommendationType;
@@ -17,11 +18,22 @@ const Recommendation: React.FC<RecommendationProps> = ({ recommendation, isRelev
   };
 
   return (
-    <div className={`p-4 rounded-lg border ${isRelevant ? 'border-teal/30 bg-teal/5' : 'border-gray-light bg-white'}`}>
+    <div 
+      className={cn(
+        "p-4 rounded-lg border transition-all",
+        isRelevant 
+          ? 'border-teal/30 bg-teal/5 hover:shadow-md' 
+          : 'border-gray-light bg-white hover:border-gray'
+      )}
+    >
       <div className="flex items-start justify-between">
         <h3 className="text-base font-medium">{recommendation.title}</h3>
         <Badge 
-          className={`ml-2 ${priorityColors[recommendation.priority]} bg-opacity-15 border-none`}
+          className={cn(
+            "ml-2 whitespace-nowrap",
+            priorityColors[recommendation.priority],
+            "bg-opacity-15 border-none"
+          )}
         >
           {recommendation.priority.charAt(0).toUpperCase() + recommendation.priority.slice(1)} Priority
         </Badge>
