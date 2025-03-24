@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Recommendation from './Recommendation';
 import CodeSnippet from './CodeSnippet';
+import { Shield, Settings } from 'lucide-react';
 
 interface GuardrailsExplorerProps {
   guardrails: Guardrail[];
@@ -61,17 +62,21 @@ const GuardrailsExplorer: React.FC<GuardrailsExplorerProps> = ({
   
   return (
     <div className="w-full max-w-4xl animate-fade-in">
-      <div className="mb-6 flex justify-between items-center">
+      <div className="mb-8 flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-medium">Security Guardrails</h2>
+          <h2 className="text-2xl font-medium flex items-center">
+            <Shield className="w-6 h-6 text-teal mr-2" />
+            Security Guardrails
+          </h2>
           <p className="text-gray-dark/80 mt-1">
             Based on your {projectType.name} project with {selectedTechnologies.length} technologies
           </p>
         </div>
         <button
           onClick={onReset}
-          className="text-teal hover:text-teal-dark"
+          className="text-teal hover:text-teal-dark font-medium flex items-center"
         >
+          <Settings className="w-4 h-4 mr-1" />
           Configure New Project
         </button>
       </div>
@@ -117,16 +122,16 @@ const GuardrailsExplorer: React.FC<GuardrailsExplorerProps> = ({
           </Tabs>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           {relevantGuardrails.map((guardrail) => (
             <button
               key={guardrail.id}
               onClick={() => setSelectedGuardrail(guardrail)}
               className="flex flex-col items-center text-left p-6 rounded-lg border border-gray-light hover:border-teal hover:shadow-md transition-all duration-300 bg-white"
             >
-              <div className="text-4xl mb-3">{guardrail.icon}</div>
-              <h3 className="text-xl font-medium">{guardrail.title}</h3>
-              <p className="text-sm text-gray-dark/70 mt-2">{guardrail.description}</p>
+              <div className="text-4xl mb-4">{guardrail.icon}</div>
+              <h3 className="text-xl font-medium mb-2">{guardrail.title}</h3>
+              <p className="text-sm text-gray-dark/80">{guardrail.description}</p>
             </button>
           ))}
         </div>

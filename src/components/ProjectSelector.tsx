@@ -105,6 +105,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
                   "hover:border-teal hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal",
                   "bg-white text-center h-full"
                 )}
+                aria-label={`Select ${project.name} project type`}
               >
                 <div className="w-16 h-16 rounded-full bg-teal/10 flex items-center justify-center mb-4">
                   {projectTypeIcons[project.id as keyof typeof projectTypeIcons]}
@@ -120,13 +121,13 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
       {currentStep === 2 && selectedProjectType && (
         <div className="animate-slide-up">
           <div className="mb-6">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap gap-2">
               <h3 className="text-xl font-medium">
                 Configure Safety Filters for {selectedProjectType.name}
               </h3>
               <button 
                 onClick={() => setCurrentStep(1)}
-                className="text-teal hover:text-teal-dark text-sm"
+                className="text-teal hover:text-teal-dark text-sm flex items-center"
               >
                 Change Project Type
               </button>
@@ -175,11 +176,11 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
                     <div>
                       <Label 
                         htmlFor={`data-${dataType.id}`}
-                        className="cursor-pointer flex items-center"
+                        className="cursor-pointer flex items-center flex-wrap gap-2"
                       >
                         {dataType.name}
                         {dataType.riskLevel === 'high' && (
-                          <span className="ml-2 px-2 py-0.5 bg-red-100 text-red-600 rounded-full text-xs">
+                          <span className="px-2 py-0.5 bg-red-100 text-red-600 rounded-full text-xs">
                             High Risk
                           </span>
                         )}
@@ -198,6 +199,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ onComplete }) => {
             <button
               onClick={handleComplete}
               className="bg-teal hover:bg-teal-dark text-white px-6 py-2 rounded-md transition-colors duration-200"
+              aria-label="Continue to security recommendations"
             >
               Continue
             </button>
